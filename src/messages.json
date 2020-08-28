@@ -2,5 +2,18 @@
     "client": {
         "mention": "Olá, tudo bem? Meu prefixo é `{prefix}`",
         "presence": "observando comandos com meu prefixo: {prefix}"
+    },
+    "commands": {
+        "links": {
+            "desciption": "Eu sou um bot criado pelo <@{owner0}> e pelo <@{owner1}>.\nAqui estão alguns links relacionados ao bot, que talvez você possa querer!",
+            "fields": [{
+                        "name": "Convite o bot para o seu servidor:",
+                        "value": "[Clique aqui]({inviteLink})"
+                    },
+                    {
+                        "name": "Código fonte do bot:",
+                        "value": "[Clique aqui]({gitHubRepository})"
+                    }]
+        }
     }
 }
