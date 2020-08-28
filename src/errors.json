@@ -1,0 +1,9 @@
+{
+    "help": {
+        "invalidCommandName": "Digite um comando válido!",
+        "noCommandName": "Digite um comando!"
+    },
+    "command": {
+        "notFoundCommand": "Comando `{prefix}{command}` não encontrado!"
+    }
+}

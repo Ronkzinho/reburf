@@ -1,0 +1,6 @@
+{
+    "client": {
+        "mention": "Olá, tudo bem? Meu prefixo é `{prefix}`",
+        "presence": "observando comandos com meu prefixo: {prefix}"
+    }
+}
