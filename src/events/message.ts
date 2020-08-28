@@ -7,7 +7,7 @@ export default async function(this: Reburf, message: Message){
     if(message.content.startsWith(`<@${this.user.id}>`) || message.content.startsWith(`<@!${this.user.id}`)) return message.channel.send(pJ(this.messages.client.mention, { prefix: this.prefix }))
     if(!message.content.startsWith(this.prefix)) return
     var args = message.content.slice(this.prefix.length).split(/ +/g)
-    var command = args.shift()!.toLowerCase()!
+    var command = args.shift().toLowerCase()
     if(!command || command === ""){
         return message.channel.send(this.errors.help.noCommandName)
     }
