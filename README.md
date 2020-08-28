@@ -5,7 +5,9 @@ TOKEN=client token
 PREFIX=your prefix
 ```
 To start the bot you have to have node, and types those commands:
-```npm i discord.js nodemon dotenv @types/node```
-```npm i nodemon --dev```
-```npm i typescript ts-node -g\n```
+```
+npm i discord.js nodemon dotenv @types/node
+npm i nodemon --dev
+npm i typescript ts-node -g
+```
 Without the informations above you won't be able to run your bot.
