@@ -1,8 +1,8 @@
 export interface categorysInterface{
-    name: "utility" | "fun" | null
-    emoji: string
-    hidden?: boolean | false
-    translation?: string
+    name: "utility" | "fun"
+    emoji: "🤡" | "🥳" | "🤔"
+    translation?: "Utilidade" | "Diversão" | "Sem categoria"
+    hidden?: boolean
 }
 
 export var categorys: Array<categorysInterface> = [{

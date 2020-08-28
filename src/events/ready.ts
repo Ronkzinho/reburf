@@ -1,5 +1,4 @@
 import Reburf from "../client";
-import { connect } from "http2";
 
 export default async function(this: Reburf){
     console.log(this.user.username + " onlainer")

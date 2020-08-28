@@ -5,8 +5,8 @@ export default abstract class extends command{
     initialEmojis: Array<string>
     categorysEmojis: Array<string>
     goBackOrDelete: Array<string>
-    constructor(name, client){
-        super(name, client)
+    constructor(client){
+        super(client)
         this.name = "help"
         this.category = "utility"
         this.description = "Comando de ajuda do bot!"
@@ -18,7 +18,7 @@ export default abstract class extends command{
         this.goBackOrDelete = ["◀️", "❌"]
     }
     async run({ message, args }: runCommand){
-        var helpClass = new this.client.classes.Help(this, this.client)
+        var helpClass = new this.client.classes.Help(this.client)
         if(args[0]){
             var { msg, error } = await helpClass.sendCommandHelp(message, args)
             if(error) return message.channel.send(error)

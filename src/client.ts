@@ -1,4 +1,4 @@
-import { Client, Collection, User } from "discord.js";
+import { Client, Collection, User, ClientOptions } from "discord.js";
 import { commandIterface } from "./utils/command"
 import { readdirSync, statSync } from "fs"
 import { Classes } from "./utils"
@@ -16,7 +16,7 @@ export default class Reburf extends Client{
     errors: typeof errors
     messages: typeof messages
     classes: { Help: typeof Classes["Help"] }
-    constructor(prefix, options = {}){
+    constructor(prefix, options: ClientOptions = {}){
         super(options)
         this.prefix = prefix
         this.commands = new Collection()
@@ -32,10 +32,10 @@ export default class Reburf extends Client{
         readdirSync(path).forEach(async file => {
             try {
                 const filePath = path + '/' + file
-                if (file.endsWith('.ts') || file.endsWith(".js")){
-                    const Command = (await import(filePath.replace("/src", ""))).default
+                if (file.endsWith(".ts") || file.endsWith(".js")){
+                    const Command = (await import(filePath)).default
                     const commandName = file.replace(/.ts|.js/g,'').toLowerCase()
-                    const command = new Command(commandName, this)
+                    const command = new Command(this)
                     this.commands.set(commandName, command)
                 } else if (statSync(filePath).isDirectory()) {
                     this.initializeCommands(filePath)

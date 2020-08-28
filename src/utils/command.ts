@@ -2,19 +2,7 @@ import Reburf from "../client"
 import { Message } from "discord.js";
 import { categorysInterface } from "./categorys";
 
-export interface commandIterface{
-    name: string;
-    client?: Reburf;
-    aliases?: Array<string>;
-    allowDm?: Boolean;
-    category?: categorysInterface["name"];
-    manutencion?: Boolean;
-    owner?: Boolean;
-    description?: string;
-    usage?: Array<string>;
-    hidden?: Boolean;
-    run({ message, args, pJ }: runCommand): any
-}
+export interface commandIterface extends command{}
 export interface runCommand{
     message: Message
     args: Array<string>
@@ -31,8 +19,8 @@ export class command implements commandIterface{
     description: string;
     usage: Array<string>;
     hidden: boolean;
-    constructor(name, client){
-        this.name = name
+    constructor(client: Reburf){
+        this.name = null
         this.client = client
         this.allowDm = false
         this.manutencion = false
@@ -43,5 +31,5 @@ export class command implements commandIterface{
         this.aliases = []
         this.usage = []
     }
-    run(options: runCommand){ }
+    run({ }: runCommand){ }
 }

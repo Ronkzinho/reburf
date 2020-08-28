@@ -2,8 +2,8 @@ import { command, runCommand } from "../utils/command";
 import Embed from "../utils/Classes/Embed";
 
 export default abstract class extends command{
-    constructor(name, client){
-        super(name, client)
+    constructor(client){
+        super(client)
         this.name = "eval"
         this.aliases = ["e"]
         this.owner = true

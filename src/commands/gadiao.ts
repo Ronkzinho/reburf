@@ -1,8 +1,8 @@
 import { command, runCommand } from "../utils/command";
 
 export default abstract class extends command{
-    constructor(name, client){
-        super(name, client)
+    constructor(client){
+        super(client)
         this.name = "gadiao"
         this.category = "fun"
         this.usage = [`${this.name}`]

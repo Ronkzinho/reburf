@@ -6,8 +6,8 @@ import { categorys, categorysInterface } from "../categorys"
 
 export default class Help extends help{
     level: number
-    constructor(name, client){
-        super(name, client)
+    constructor(client){
+        super(client)
         this.level = 0
     }
     async sendIntialEmbed(message: Message, msg?: Message){
