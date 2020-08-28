@@ -24,4 +24,5 @@ export default async function(this: Reburf, message: Message){
             message.channel.send(pJ(this.errors.command.notFoundCommand, { prefix: this.prefix , command }))
         })
     }
+    return
 }

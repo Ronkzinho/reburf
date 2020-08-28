@@ -14,6 +14,6 @@ export default abstract class extends command{
         let msg = await message.channel.send(new Embed({ title: "Calculando..." }, message, 1))
         setTimeout(() => {
             msg.edit(new Embed({ title: "Pong!", description: `${msg.createdTimestamp - message.createdTimestamp}ms` }, message, 1))
-        }, 1)
+        }, 200)
     }
 }
